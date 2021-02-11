@@ -1,0 +1,17 @@
+B-Number
+I-Number
+B-Food
+I-Food
+B-Restaurant
+I-Restaurant
+B-Artist
+I-Artist
+B-Destination
+I-Destination
+B-Departure
+I-Departure
+B-Date
+I-Date
+B-Location
+I-Location
+O
