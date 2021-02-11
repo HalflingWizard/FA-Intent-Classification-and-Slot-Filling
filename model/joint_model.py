@@ -18,9 +18,9 @@ from tensorflow.keras.metrics import SparseCategoricalAccuracy
 from tensorflow.keras.optimizers import Adam
 
 # Load the Datasets
-df_train = pd.read_csv('/content/train.csv')
-df_validation = pd.read_csv('/content/valid.csv')
-df_test = pd.read_csv('/content/test.csv')
+df_train = pd.read_csv('/Persian_dataset/train.csv')
+df_validation = pd.read_csv('/Persian_dataset/valid.csv')
+df_test = pd.read_csv('/Persian_dataset/test.csv')
 
 # initiate ParsBERT Tokenizer
 tokenizer = AutoTokenizer.from_pretrained("HooshvareLab/bert-fa-base-uncased")
@@ -55,7 +55,7 @@ encoded_validation = encode_dataset(tokenizer, df_validation['words'], 25)
 encoded_test = encode_dataset(tokenizer, df_test['words'], 25)
 
 # Creating Intent Map
-intent_names = Path('/content/intent.txt').read_text('utf-8').split()
+intent_names = Path('/Persian_dataset/intent.txt').read_text('utf-8').split()
 intent_map = dict((label, idx) for idx, label in enumerate(intent_names))
 
 # Converting Intent labels to numbers using intent map
@@ -65,7 +65,7 @@ intent_test = df_test['intent_label'].map(intent_map).values
 
 # creating Slot map
 slot_names = ["[PAD]"]
-slot_names += Path('/content/slots.txt').read_text('utf-8').strip().splitlines()
+slot_names += Path('/Persian_dataset/slots.txt').read_text('utf-8').strip().splitlines()
 slot_map = {}
 for label in slot_names:
     slot_map[label] = len(slot_map)
