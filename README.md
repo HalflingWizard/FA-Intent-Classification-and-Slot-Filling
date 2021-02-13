@@ -2,7 +2,9 @@
 A Joint Model for Intent Classification and Slot Filling in Persian Language using BERT
 
 <div style="text-align:center">
+  
 ![header](https://raw.githubusercontent.com/HalflingWizard/FA-Intent-Classification-and-Slot-Filling/main/img/header.png)
+
 </div>
 
 This model is based on [This Paper](https://arxiv.org/abs/1902.10909) by Qian Chen, Zhu Zhuo and Wen Wang.
